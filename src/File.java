@@ -1,15 +1,24 @@
-import java.util.List;
+public class File implements Directory {
 
-public class File implements FileSystem {
+    private final String fileName;
+    private final String content;
 
-    private String fileName;
-
-    public File(String fileName) {
+    public File(String fileName, String content) {
         this.fileName = fileName;
+        this.content = content;
+    }
+
+    @Override
+    public String getName() {
+        return fileName;
     }
 
     @Override
     public void ls() {
-        System.out.println("File name " + fileName);
+        System.out.println("File: " + fileName);
+    }
+
+    public String getContent() {
+        return content;
     }
 }
